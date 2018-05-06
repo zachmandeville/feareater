@@ -1,15 +1,14 @@
-import { createStore, combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
+var initialState = {
+  fear: ''
+}
 
-import { fearEater } from './fearEater'
+var reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_FEAR':
+      return {fear: action.fear}
+    default:
+      return state
+  }
+}
 
-var reducer = combineReducers({
-  fearEater: fearEater,
-  form: formReducer // mounted under "form"
-})
-
-var store = createStore(reducer, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
-
-export default store
+export default reducer

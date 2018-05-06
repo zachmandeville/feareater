@@ -1,6 +1,9 @@
 export const addFear = (fear) => {
-  type: "ADD_FEAR",
-  fear
+  return {
+    type: "ADD_FEAR",
+    fear
+  }
 }
+
 
 
